@@ -1,0 +1,32 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LiteMinePro Dashboard</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <div class="form-container">
+      <h1 class="logo">Welcome to LiteMinePro</h1>
+      <p>Your Litecoin address: <span id="wallet"></span></p>
+      <div style="margin-top: 20px;">
+        <h2 style="color: lightgreen;">Mining Plans</h2>
+        <button onclick="choosePlan('Starter')">Starter Plan - 0.1 LTC → 0.2 LTC</button>
+        <button onclick="choosePlan('Advanced')">Advanced Plan - 0.3 LTC → 0.6 LTC</button>
+        <button onclick="choosePlan('Pro')">Pro Plan - 0.5 LTC → 1 LTC</button>
+      </div>
+    </div>
+  </div>
+<script>
+  const wallet = localStorage.getItem("ltcAddress");
+  document.getElementById("wallet").textContent = wallet;
+
+  function choosePlan(plan) {
+    alert("Send payment to our address to activate the " + plan + " plan. Countdown will start after payment is confirmed.");
+  }
+</script>
+</body>
+</html>
